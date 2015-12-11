@@ -26,9 +26,13 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
   gem 'faker'
+  gem 'factory_girl_rails'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
+  gem "interactive_editor"
+  gem "awesome_print"
+  gem "hirb"
 end
