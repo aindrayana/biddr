@@ -8,6 +8,7 @@ class UsersController < ApplicationController
                                                 :password, :password_confirmation])
     user = User.new user_params
     if user.save
+      session[:user_id] = user.id
       redirect_to root_path, notice: "account created"
     else
       render :new

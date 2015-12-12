@@ -1,0 +1,24 @@
+<% if !@auction.errors.empty? %>
+    <div class="red-sm">Error (s) :
+      <%= @auctions.errors.full_messages.join(", ") %> !!
+    </div>
+  <% end %>
+
+  <%= simple_form_for(@auction, html: {class: "form-horizontal", role: "form"}) do |f| %>
+    <div class="form-group">
+      <%= f.input :title, class: "form-control", placeholder: "title" %>
+    </div>
+    <div class="form-group">
+      <%= f.input :detail, class: "form-control", placeholder: "input detail description ..", rows: "4"%>
+    </div>
+    <div class="form-group">
+      <%= f.input :end_date, class: "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.input :price, class: "form-control", placeholder: "0" %>
+    </div>
+    <div class="form-group">
+        <%= f.submit(class: "btn btn-primary") %>
+        <%= link_to 'Cancel', auctions_path, class:"btn btn-primary" %>
+    </div>
+  <% end %>
